@@ -39,19 +39,28 @@ def all_supplies_in_holidays(holiday_hash)
     end
 end
 
+# def all_holidays_with_bbq(holiday_hash)
+#   with_bbq_array = []
+#   holiday_hash.map do |season, season_hash|
+#       season_hash.map do |holiday_name, supply_array|
+#           if supply_array.include?("BBQ")
+#           with_bbq_array << holiday_name
+#           return with_bbq_array
+#       end
+#     end
+#   end
+# end
+
+
 def all_holidays_with_bbq(holiday_hash)
-  with_bbq_array = []
   holiday_hash.map do |season, season_hash|
-      season_hash.map do |holiday_name, supply_array|
-          if supply_array.include?("BBQ")
-          with_bbq_array << holiday_name
-          return with_bbq_array
+    season_hash.map do |holiday_name, supply_array|
+      if supply_array.include?("BBQ")
+        holiday_name
       end
     end
-  end
-end
-
-                 
+  end.flatten.compact
+end  
 
 
 
